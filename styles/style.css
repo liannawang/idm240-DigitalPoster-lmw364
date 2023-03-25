@@ -1,0 +1,377 @@
+@font-face {
+  font-family: "Suisse";
+  src: url(/fonts/SuisseIntl-SemiBold.ttf);
+}
+
+* {
+  border: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  font-family: "Suisse", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.4s;
+  overflow: hidden;
+  /* text-transform: lowercase; */
+}
+body {
+  background-color: var(--background-color);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* color styles */
+:root {
+  --background-color: #f1efe6;
+  --accent-color: #1fbaec;
+  --accent-color-second: #2758b7;
+  --accent-color-third: #2587c8;
+  --text-color: #154183;
+  --mid-dark-color: #414243;
+  --pill-bg-color: #b3b3b33b;
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.svg-group {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+}
+
+.kehlani-button {
+  position: absolute;
+  top: 70px;
+  left: 105px;
+}
+
+#palm-tree {
+  animation: wind 2s infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes wind {
+  from {
+    transform: rotate(1deg) skew(-1.5deg);
+  }
+  to {
+    transform: rotate(-1deg) skew(-1.5deg);
+  }
+}
+
+#palm-tree2 {
+  animation: wind2 2s infinite alternate;
+  transform-origin: bottom center;
+  animation-delay: 0s;
+}
+
+@keyframes wind2 {
+  from {
+    transform: rotate(-1deg) skew(1.5deg);
+  }
+  to {
+    transform: rotate(1deg) skew(1.5deg);
+  }
+}
+
+#left-outer-ring,
+#left-middle-ring,
+#left-inner,
+#right-outer-ring,
+#right-middle-ring,
+#right-inner,
+#casette-body,
+#casette-outer,
+#casette-inner,
+#casette-circle,
+#top {
+  fill: #24235e;
+}
+
+#palm-tree,
+#radio-body,
+#surfboard {
+  fill: #154183;
+}
+
+#surfboard:hover {
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  -ms-animation-duration: 1000ms;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(5deg);
+  }
+  25% {
+    -webkit-transform: rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+  }
+  75% {
+    -webkit-transform: rotate(-2.5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-ms-keyframes wiggle {
+  0% {
+    -ms-transform: rotate(0.5deg);
+  }
+  25% {
+    -ms-transform: rotate(-0.5deg);
+  }
+  50% {
+    -ms-transform: rotate(0.7deg);
+  }
+  75% {
+    -ms-transform: rotate(-2.5deg);
+  }
+  100% {
+    -ms-transform: rotate(0deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(2.5deg);
+  }
+  25% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-1.25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+text {
+  color: #414243;
+  font-size: 1000px;
+}
+
+.kehlani-button:hover .kehlani-link {
+ 
+  fill: #0cb0f7;
+  transition: 0.2s;
+}
+
+.kehlani-button:hover .kehlani-link-container {
+ 
+  stroke: #0cb0f7;
+  transition: 0.2s;
+}
+
+.responsive-kehlani-button-top {
+  display: none;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.tablet {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* body{
+background-color: black;
+} */
+  .tablet {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  /* body{
+  background-color: black;
+  } */
+  .tablet {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
+
+.a-slide {
+  --animdur: 3s;
+  --animn: slide;
+}
+[data-animation] {
+  animation: var(--animn, none) var(--animdur, 0s) var(--animtf, linear)
+    var(--animdel, 0s) var(--animic, infinite) var(--animdir, alternate)
+    var(--animfm, none) var(--animps, running);
+}
+
+@keyframes slide {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: calc(100% - var(--w, 150px));
+  }
+}
+
+#radio {
+  animation-name: scale;
+  animation-duration: 1.08s;
+  animation-iteration-count: infinite;
+  transform-origin: 15% 95%;
+  cursor: pointer;
+  animation-play-state: paused;
+}
+
+#radio-tablet {
+  animation-name: scale;
+  animation-duration: 1.08s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 55%;
+  cursor: pointer;
+  animation-play-state: paused;
+}
+
+#radio-mobile {
+  animation-name: scale;
+  animation-duration: 1.08s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 55%;
+  cursor: pointer;
+  animation-play-state: paused;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    transform-origin: right right;
+  }
+  50% {
+    transform: scale(1.02);
+    transform-origin: right right;
+  }
+}
+
+
+  
+
+
+  
+/*Paper Plane: Animation*/
+.bird {
+  -webkit-animation: paper-plane-scoping 2s alternate infinite;
+  -moz-animation: paper-plane-scoping 2s alternate infinite;
+  animation: paper-plane-scoping 2s alternate infinite;
+
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+.bird1 {
+  -webkit-animation: paper-plane-scoping 2s alternate infinite;
+  -moz-animation: paper-plane-scoping 2s alternate infinite;
+  animation: paper-plane-scoping 2s alternate infinite;
+
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  
+  animation-delay: -0.5s;
+}
+
+@-webkit-keyframes paper-plane-scoping {
+  0% {
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(25px);
+    -moz-transform: translateY(25px);
+    transform: translateY(25px);
+  }
+}
+
+.plane {
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+
+  -webkit-animation: paper-plane-soaring 4s forwards infinite;
+  -moz-animation: paper-plane-soaring 4s forwards infinite;
+  animation: paper-plane-soaring 4s forwards infinite;
+}
+@-webkit-keyframes paper-plane-soaring {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  40% {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  60% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  70% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+/* .svg-container svg{
+  animation-name: colorsheme;
+  animation-duration: 10s;
+  animation-iteration-count: infinite; 
+} */
+
